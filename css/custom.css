@@ -80,12 +80,14 @@ main {
 }
 
 .flex-item.middle {
-  flex: 2; /* Middle column gets more space */
+  flex: 2;
+  /* Middle column gets more space */
   padding: 0;
 }
 
 .flex-item:not(.middle) {
-  flex: 0.5; /* Left and right columns are equal */
+  flex: 0.5;
+  /* Left and right columns are equal */
 }
 
 footer {
@@ -129,32 +131,33 @@ footer {
 /* Slides */
 .slide {
   position: absolute;
-	padding-top:20px;
+  padding-top: 20px;
   height: 100%;
   display: grid;
-  grid-template-columns: 1.3fr 1fr; /* Two equal columns: one for the image, one for the text */
-  align-items: center; /* Vertically center the grid items */
-  gap: 0.5em; /* Add space between the columns */
+  grid-template-columns: 1.3fr 1fr;
+  /* Two equal columns: one for the image, one for the text */
+  align-items: center;
+  /* Vertically center the grid items */
+  gap: 0.5em;
+  /* Add space between the columns */
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s ease-in-out, visibility 0s linear 1s;
-  
+
 }
-
-
 
 .slide.active {
   opacity: 1;
   visibility: visible;
 }
 
-.left-img{
+.left-img {
   margin-left: 0;
 }
 
 .left-img .top {
-  margin-top:2em;
-  margin-left:15px; 
+  margin-top: 2em;
+  margin-left: 15px;
   border-radius: 1em 1em 0 0;
 }
 
@@ -163,38 +166,40 @@ footer {
   margin: auto;
 }
 
-.cont:hover .controls{
+.cont:hover .controls {
   opacity: 1;
 }
 
 .controls {
-    display: none;
-  }
+  display: none;
+}
 
 @media (min-width: 992px) {
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40%; /* Spacing between controls and slideshow container */
-  position: static; /* Ensure controls stay in natural flow */
-  opacity: 0;
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40%;
+    /* Spacing between controls and slideshow container */
+    position: static;
+    /* Ensure controls stay in natural flow */
+    opacity: 0;
+  }
+
+  .controls .prev,
+  .controls .next {
+    background-color: #60b4e6;
+    color: white;
+    font-size: 2rem;
+    padding: 5px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+  }
 }
 
-.controls .prev,
-.controls .next {
-  background-color: #60b4e6;
-  color: white;
-  font-size: 2rem;
-  padding: 5px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 5px;
-}
-}
-
-@media (min-width: 1920px){
+@media (min-width: 1920px) {
   .consultation-form .img-box {
     width: 559px !important;
   }
@@ -208,8 +213,8 @@ footer {
   }
 
   .slideText {
-  font-size: 21pt;
-  line-height: 1.5;
+    font-size: 21pt;
+    line-height: 1.5;
   }
 }
 
@@ -241,14 +246,17 @@ footer {
     opacity: 0;
     transform: translateY(20px);
   }
+
   10% {
     opacity: 1;
     transform: translateY(0);
   }
+
   90% {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(20px);
@@ -257,14 +265,24 @@ footer {
 
 @media (max-width: 767.98px) {
   .order-mobile-first {
-    order: -1; /* Move to first position */
+    order: -1;
+    /* Move to first position */
   }
+
   .order-mobile-last {
-    order: 1; /* Move to last position */
+    order: 1;
+    /* Move to last position */
   }
 
   .slide {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-      gap: 20px !important; /* Space between grid items */
+    gap: 20px !important;
+    /* Space between grid items */
   }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  /* Optional: Visual feedback for disabled state */
 }

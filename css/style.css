@@ -96,12 +96,6 @@ body {
   padding: 0;
 }
 
-.main-page-wrapper {
-  height: :;
-  0px;
-
-}
-
 h1,
 h2,
 h3,
@@ -455,6 +449,7 @@ body .theme-button-one {
   color: #fff;
   border-radius: 5px;
   padding: 0 7em;
+  width: 100%;
 }
 
 body .theme-button-one:hover {
@@ -467,15 +462,12 @@ body .theme-button-one:hover {
   text-align: center;
 }
 
-.theme-title-one height: 2px;
-
-  {
+.theme-title-one {
+  height: 2px;  
   position: relative;
   text-transform: lowercase;
   padding-bottom: 60px;
   padding-top: 30px;
-
-
 }
 
 .theme-title-one h2:before {
@@ -1410,8 +1402,7 @@ body .theme-button-one:hover {
 
 .theme-form-one .theme-button-one {
   font-family: 'Nunito Sans', sans-serif;
-  margin-left: 100px;
-  padding-right: -300px;
+  /* padding-right: -300px; */
 }
 
 /*------------------- Partner Slider ------------------*/

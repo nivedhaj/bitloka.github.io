@@ -549,7 +549,9 @@
                                                         id="contactMsg">Please get in touch. I am interested to explore further !</textarea>
                                                 </div>
 
-                                                <button class="theme-button-one" onclick="sendRequest()">Submit</button>
+                                                <div class="col-12">
+                                                <button class="theme-button-one" onclick="sendRequest()" id="submitButton">Submit</button>
+                                            </div>
                                             </div> <!-- /.row -->
 
                                         </form>
@@ -578,7 +580,7 @@
             // Create a toast element
             const toast = document.createElement('div');
             toast.className = 'toast';
-            toast.textContent = message;
+            toast.innerHTML = message;
 
             // Append to the container
             container.appendChild(toast);
@@ -586,6 +588,7 @@
             // Remove the toast after 3 seconds
             setTimeout(() => {
                 toast.remove();
+                changeContent('Home', 'nav-home');
             }, 3000);
         }
     </script>
@@ -749,8 +752,9 @@
                 })
                     .then(response => {
                         if (response) {
-
-                            showToast('Thank you for your interest! We will get in touch with you shortly !');
+                            showToast("Thank you for your interest! We will get in touch with you shortly ! <br> Navigating to Home ...");
+                            clearData();
+                            disableSubmitButton();
                         }
                     })
                     .catch(error => {
@@ -759,6 +763,36 @@
             }
         }
     </script>
+
+    <script>
+        function clearData(){
+            var name = document.getElementById("contactName");
+            var email = document.getElementById("contactEmail");
+            var mobile = document.getElementById('contactMobile');
+            var message = document.getElementById('contactMsg');
+
+            name.value = "";
+            email.value = "";
+            mobile.value = "";
+            message.value = "Please get in touch. I am interested to explore further !";
+        }
+    </script>
+
+    <script>
+        function disableSubmitButton() {
+            var button = document.getElementById("submitButton");
+
+            console.log(button)
+            button.disabled = true; // Disable the button
+
+            // Re-enable the button after 5 minutes (300000 ms)
+            setTimeout(() => {
+                button.disabled = false;
+            }, 120000);
+        }
+    </script>
+
+
 </body>
 
 </html>
