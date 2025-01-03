@@ -14,6 +14,11 @@
     <meta name="msapplication-navbutton-color" content="#061948">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#061948">
+    <!-- Prevent cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <title>Bitloka Solutions</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
@@ -98,8 +103,8 @@
                     <div class="cont">
                         <div class="slideshow-container">
                             <div class="slide">
-                                <div class="order-mobile-last"><img src="images/home/img1.png" alt="Image 1" class="slide-img"
-                                        style="margin-right: 0; margin-left: -20px;" /></div>
+                                <div class="order-mobile-last"><img src="images/home/img1.png" alt="Image 1"
+                                        class="slide-img" style="margin-right: 0; margin-left: -20px;" /></div>
                                 <div class="order-mobile-first">
                                     <p1 class="slideText">Be part of our story. Sky is the limit "Customer Delight"
                                         epitomizes our journey,
@@ -109,8 +114,8 @@
                             </div>
 
                             <div class="slide">
-                                <div class="order-mobile-last"><img src="images/home/img2.png" alt="Image 2" class="slide-img"
-                                        style="margin-right: 0;margin-left: -20px;" /></div>
+                                <div class="order-mobile-last"><img src="images/home/img2.png" alt="Image 2"
+                                        class="slide-img" style="margin-right: 0;margin-left: -20px;" /></div>
                                 <div class="order-mobile-first">
                                     <p1 class="slideText">Our cloud solution optimizes performance, scalability, and
                                         efficiency through state-of-the-art technology. We deliver adaptable,
@@ -119,8 +124,8 @@
                             </div>
 
                             <div class="slide">
-                                <div class="order-mobile-last"><img src="images/home/img3.png" alt="Image 3" class="slide-img"
-                                        style="margin-right: 0;margin-left: -20px;" /></div>
+                                <div class="order-mobile-last"><img src="images/home/img3.png" alt="Image 3"
+                                        class="slide-img" style="margin-right: 0;margin-left: -20px;" /></div>
                                 <div class="order-mobile-first">
                                     <p1 class="slideText">A dedicated team of UX specialists and adept technologies
                                         deliver cutting-edge solutions, ensuring exceptional performance across the
@@ -129,8 +134,8 @@
                             </div>
 
                             <div class="slide">
-                                <div class="order-mobile-last"><img src="images/home/img4.png" alt="Image 4" class="slide-img"
-                                        style="margin-right: 0;margin-left: -20px;" /></div>
+                                <div class="order-mobile-last"><img src="images/home/img4.png" alt="Image 4"
+                                        class="slide-img" style="margin-right: 0;margin-left: -20px;" /></div>
                                 <div class="order-mobile-first">
                                     <p1 class="slideText">We're committed to crafting innovative
                                         solutions that enhance education, streamline communication,
@@ -140,8 +145,8 @@
                             </div>
 
                             <div class="slide">
-                                <div class="order-mobile-last"><img src="images/home/img5.png" alt="Image 5" class="slide-img"
-                                        style="margin-right: 0;margin-left: -20px;" /></div>
+                                <div class="order-mobile-last"><img src="images/home/img5.png" alt="Image 5"
+                                        class="slide-img" style="margin-right: 0;margin-left: -20px;" /></div>
                                 <div class="order-mobile-first">
                                     <p1 class="slideText">Building a high-performance team and core competencies is
                                         vital for growth. We recruit diverse talent and foster a collaborative
@@ -550,8 +555,9 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                <button class="theme-button-one" onclick="sendRequest()" id="submitButton">Submit</button>
-                                            </div>
+                                                    <button class="theme-button-one" onclick="sendRequest()"
+                                                        id="submitButton">Submit</button>
+                                                </div>
                                             </div> <!-- /.row -->
 
                                         </form>
@@ -765,7 +771,7 @@
     </script>
 
     <script>
-        function clearData(){
+        function clearData() {
             var name = document.getElementById("contactName");
             var email = document.getElementById("contactEmail");
             var mobile = document.getElementById('contactMobile');
