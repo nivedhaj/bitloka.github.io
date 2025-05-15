@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* Base font size for the body */
+body {
+  /* Fallback fonts */
+  line-height: 1.5;
+  /* Good readability */
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2rem;
+    /* Adjust base font size on smaller screens */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* Stacks columns on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+    /* Further adjust for very small screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.5rem;
+    /* Larger font size for desktops */
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding: 0;
+}
+
+header {
+  height: 20vh;
+  /* Fixed height */
+  flex-shrink: 0;
+  /* Prevents the header from shrinking */
+}
+
+main {
+  /* flex-grow: 1; */
+  height: 73vh;
+  background-color: #cfeefd;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex !important;
+  /* grid-template-columns: 0.5fr 2fr 0.5fr; */
+}
+
+
+
+.flex-item {
+  /* background: #BDE5F9; */
+}
+
+.flex-item.middle {
+  flex: 2; /* Middle column gets more space */
+  padding: 0;
+}
+
+.flex-item:not(.middle) {
+  flex: 0.5; /* Left and right columns are equal */
+}
+
+footer {
+  background: #001648;
+  /* text-align: -webkit-right; */
+  height: 7vh;
+  /* Fixed height */
+  flex-shrink: 0;
+  bottom: 0;
+}
+
+.theme-inner-banner {
+  /* background: url(../images/home/inner-banner-2.png) no-repeat center center; */
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #707d9e;
+  height: 100%;
+}
+
+.theme-footer-one {
+  color: #9ca6bf;
+  line-height: 25px;
+  font-size: 17px;
+  padding: 1em 0 0 0;
+}
+
+.slideText {
+  margin-left: 0;
+  margin-bottom: 0;
+  font-size: 18pt;
+
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+	padding-top:20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* Two equal columns: one for the image, one for the text */
+  align-items: center; /* Vertically center the grid items */
+  gap: 0.5em; /* Add space between the columns */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+  
+}
+
+
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.left-img{
+  margin-left: 0;
+}
+
+.left-img .top {
+  margin-top:2em;
+  margin-left:15px; 
+  border-radius: 1em 1em 0 0;
+}
+
+.cont {
+  width: 100%;
+  margin: auto;
+}
+
+.cont:hover .controls{
+  opacity: 1;
+}
+
+.controls {
+    display: none;
+  }
+
+@media (min-width: 992px) {
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40%; /* Spacing between controls and slideshow container */
+  position: static; /* Ensure controls stay in natural flow */
+  opacity: 0;
+}
+
+.controls .prev,
+.controls .next {
+  background-color: #60b4e6;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+}
+
+@media (min-width: 1920px){
+  .consultation-form .img-box {
+    width: 559px !important;
+  }
+
+  .img-lft {
+    width: 600px !important;
+  }
+
+  .slide-img {
+    width: 750px;
+  }
+
+  .slideText {
+  font-size: 21pt;
+  line-height: 1.5;
+  }
+}
+
+.toast-container {
+  position: fixed;
+  top: 5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Individual toast message */
+.toast {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  padding: 1em 2em;
+  border-radius: 5px;
+  background-color: rgb(5, 57, 52);
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: toast-fade-in-out 10s forwards;
+}
+
+/* Animation for fade in and out */
+@keyframes toast-fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .order-mobile-first {
+    order: -1; /* Move to first position */
+  }
+  .order-mobile-last {
+    order: 1; /* Move to last position */
+  }
+
+  .slide {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      gap: 20px !important; /* Space between grid items */
+  }
+}
